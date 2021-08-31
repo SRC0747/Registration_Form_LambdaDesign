@@ -67,6 +67,12 @@ public class RegistrationForm {
         Matcher matcher = pattern.matcher("91 7523654895");
         assertTrue(matcher.matches());
     }
+    //Checking the valid 8-digit Password.
+    @Test
+    public void isValidPassword() {
+        Pattern pattern = Pattern.compile("^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$");
+        Matcher matcher = pattern.matcher("SrcSrkKolkata");
+    }
     public static void main(String[] args)
     {
 
@@ -100,5 +106,9 @@ public class RegistrationForm {
 
         //Checking Valid Mobile Number.
         System.out.println(whenMatchesTenDigitsNumber_thenCorrect());
+
+        //Check the 8-digits Password.
+        String password = "SrcSrkKolkata";
+        System.out.println(isValidPassword(password));
     }
 }
