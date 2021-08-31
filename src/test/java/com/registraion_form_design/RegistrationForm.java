@@ -110,5 +110,9 @@ public class RegistrationForm {
         //Check the 8-digits Password.
         String password = "SrcSrkKolkata";
         System.out.println(isValidPassword(password));
+
+        //Checking at least 1 UpperCase in Password.
+        String password_upper = "Sampriti@Kolkata";
+        System.out.println(isValidPassword(password_upper));
     }
 }
