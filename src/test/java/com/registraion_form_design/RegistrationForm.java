@@ -114,5 +114,10 @@ public class RegistrationForm {
         //Checking at least 1 UpperCase in Password.
         String password_upper = "Sampriti@Kolkata";
         System.out.println(isValidPassword(password_upper));
+
+
+        //Checking at least 1 Numeric Digit in Password.
+        String password_numericdigit = "Sampriti0747July";
+        System.out.println(isValidPassword(password_numericdigit));
     }
 }
