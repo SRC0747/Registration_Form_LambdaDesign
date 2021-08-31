@@ -29,6 +29,31 @@ public class RegistrationForm {
         // matched the ReGex
         return m.matches();
     }
+    // Function to validate the Second Username
+    public static boolean isValidLastUsername(String name)
+    {
+
+        // Regex to check valid username.
+        String regex = "^[Cap]\\w{5,29}[A-Za-z]$";
+
+        // Compile the ReGex
+        Pattern p = Pattern.compile(regex);
+
+        // If the username is empty
+        // return false
+        if (name == null) {
+            return false;
+        }
+
+        // Pattern class contains matcher() method
+        // to find matching between given username
+        // and regular expression.
+        Matcher m = p.matcher(name);
+
+        // Return if the username
+        // matched the ReGex
+        return m.matches();
+    }
     public static void main(String[] args)
     {
 
@@ -43,5 +68,18 @@ public class RegistrationForm {
         // Test Case: 3
         String str3 = "Cap47RjSrc";
         System.out.println(isValidFirstUsername(str3));
+        //Checking the last username.
+        // Test Case: 1
+        String str1 = "Kolkata22";
+        System.out.println(isValidLastUsername(str1));
+
+        // Test Case: 2
+        String str2 = "Cap36MkS";
+        System.out.println(isValidLastUsername(str2));
+
+        // Test Case: 3
+        String str3 = "CapRiya526Biny";
+        System.out.println(isValidLastUsername(str3));
+    }
     }
 }
