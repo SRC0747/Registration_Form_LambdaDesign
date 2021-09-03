@@ -3,7 +3,54 @@ import java.util.regex.*;
 //import java.util.regex.Matcher;
 //import java.util.regex.Pattern;
 
-public class RegistrationForm {
+public class RegistrationForm extends Exception {
+    
+     public RegistrationForm(String message, Throwable cause, ErrorCode code) {
+            super(message, cause);
+            this.code = code;
+        }
+        public RegistrationForm(String message, Throwable cause, ErrorCode code) {
+            super(message, cause);
+            this.code = code;
+        }
+
+        public RegistrationForm(String message, ErrorCode code) {
+            super(message);
+            this.code = code;
+        }
+
+        public RegistrationForm(Throwable cause, ErrorCode code) {
+            super(cause);
+            this.code = code;
+        }
+
+        public ErrorCode getCode() {
+            return this.code;
+        }
+        public void wrapException(String input) throws RegistrationForm {
+            try {
+                //Checking First Username.
+                String str1 = "Geeksforgeeks";
+                System.out.println(isValidFirstUsername(str1));
+
+                //Checking Last Username
+                String str3 = "Riya526Biny";
+                System.out.println(isValidLastUsername(str3));
+
+                //Checking Email-id.
+                String email = "sampritircgmail.com";
+                System.out.println(isValidEmail(email));
+
+                //Checking Valid Mobile Number.
+                System.out.println(whenMatchesTenDigitsNumber_thenCorrect());
+
+                //Checking Password.
+                String password = "srcsrkkolkata";
+                System.out.println(isValidPassword(password));
+            } catch (NumberFormatException e) {
+                throw new RegistrationForm("A message that describes the error.", e, ErrorCode.INVALID_PORT_CONFIGURATION);
+            }
+        }
     / Function to validate the First Username
     public static boolean isValidFirstUsername(String name)
     {
