@@ -93,6 +93,11 @@ public class RegistrationForm {
             System.out.println("Sad Test Cases.");
         }
     }
+    //JUnit Parameterised Test
+    @Test
+    public void parameterised_Test(String name) {
+        public void happy_sad_Test();
+    }
     public static void main(String[] args)
     {
 
@@ -162,5 +167,9 @@ public class RegistrationForm {
          //Checking Junit Happy or Sad Test case.
         RegistrationForm obj = new RegistrationForm();
         obj.happy_sad_Test();
+        
+         //Checking JUnit Parameterised Test Cases.
+        RegistrationForm p_obj = new RegistrationForm();
+        p_obj.parameterised_Test(String name);
     }
 }
