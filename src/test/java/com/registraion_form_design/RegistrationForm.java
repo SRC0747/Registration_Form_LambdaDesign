@@ -73,6 +73,26 @@ public class RegistrationForm {
         Pattern pattern = Pattern.compile("^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$");
         Matcher matcher = pattern.matcher("SrcSrkKolkata");
     }
+    //JUnit Happy and Sad Test Cases.
+    @Test
+    public void happy_sad_Test() {
+        String fname = "Cap23aSjk";
+        boolean fn = isValidFirstUsername(fname);
+        String lname = "Kolkata22Cap";
+        boolean ln = isValidSecondUsername(lname);
+        String email = "sampritirc@gmail.com";
+        boolean mid = isValidEmail(email);
+        String ph_no = "91 9674218589";
+        boolean ph = whenMatchesTenDigitsNumber_thenCorrect(ph_no);
+        String password = "Sampriti07@47Kolkata";
+        boolean p = isValidPassword(password);
+        if (fn && ln && mid && ph && p){
+            System.out.println("Happy Test Cases.");
+        }
+        if (fn || ln || mid || ph || p){
+            System.out.println("Sad Test Cases.");
+        }
+    }
     public static void main(String[] args)
     {
 
@@ -138,5 +158,9 @@ public class RegistrationForm {
         // by a single space.
 
         System.out.println(output);
+        
+         //Checking Junit Happy or Sad Test case.
+        RegistrationForm obj = new RegistrationForm();
+        obj.happy_sad_Test();
     }
 }
