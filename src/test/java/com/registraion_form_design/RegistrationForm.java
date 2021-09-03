@@ -146,6 +146,15 @@ public class RegistrationForm extends Exception{
     public void parameterised_Test(String name) {
         public void happy_sad_Test();
     }
+
+    //Lambda Function to convert any string value into Lambda.
+    public void lambda_conversion(String name) {
+            String Entry,variables;
+        for (Entry<String, String> entry : variables.entrySet()) {
+            String regex = "\\$\\{" + entry.getKey() + "\\}";
+            String templateText = templateText.replaceAll(regex, entry.getValue());
+        }
+    }
     public static void main(String[] args)
     {
 
@@ -219,6 +228,10 @@ public class RegistrationForm extends Exception{
         //Checking JUnit Parameterised Test Cases.
         RegistrationForm p_obj = new RegistrationForm();
         p_obj.parameterised_Test(String name);
+
+        //Lambda Conversion.
+        RegistrationForm lambda_obj = new RegistrationForm();
+        lambda_obj.lambda_conversion(String name);
         
     }
 }
